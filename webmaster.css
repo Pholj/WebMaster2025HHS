@@ -1,0 +1,115 @@
+* {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header {
+    background-color: burlywood;
+    text-align: center;
+    margin-bottom: 0; 
+    padding: 10px 0;
+   min-width: auto;
+   min-height: auto;
+}
+
+nav {
+    background-color: aliceblue;
+    margin-top: 0; 
+    padding: 10px 0; 
+    display: flex;
+    justify-content: space-evenly;
+    min-width: auto;
+    min-height: auto;
+}
+
+nav a {
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    font-size: 50px;
+    padding: 10px 20px;
+    justify-content: space-evenly;
+}
+
+nav a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+main {
+    padding: 10px;
+    min-width: auto;
+    min-height: auto;
+    overflow: hidden;
+    text-align: center;
+    background-color: beige;
+    margin-left: -10px;
+}
+
+
+
+main a {
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    font-size: 50px;
+    padding: 10px 20px;
+    justify-content: space-evenly;
+    margin-top: -10px;
+}
+
+main a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-in-out;
+}
+
+main a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.sliding-container {
+    margin-top: 20px;
+    display: flex;
+    width: 300%;
+    height: 100vh;
+    animation: slideSmooth 18s infinite;
+}
+
+.sliding-container .slide {
+    width: 50vw;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes slideSmooth {
+    0% { transform: translateX(-2%); } 
+    25% { transform: translateX(-14.5%); } 
+    50% { transform: translateX(-27%); } 
+    75% { transform: translateX(-39.5%); } 
+    100% { transform: translateX(-52%); }
+}
